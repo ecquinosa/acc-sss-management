@@ -325,6 +325,23 @@ Public Class ConnectionString
         Try
             cb.Items.Clear()
 
+            cb.DataSource = dt
+            cb.DisplayMember = dt.Columns(0).ColumnName
+            cb.ValueMember = dt.Columns(0).ColumnName
+        Catch ex As Exception
+            Dim errorLogs As String = ex.ToString
+            errorLogs = errorLogs.Trim
+            sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
+                & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
+            ExecuteSQLQuery(sql)
+            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+        End Try
+    End Sub
+
+    Public Sub fillComboBox_bak(ByVal dt As DataTable, ByVal cb As ComboBox)
+        Try
+            cb.Items.Clear()
+
             For row As Integer = 0 To dt.Rows.Count - 1
                 cb.Items.Add(dt.Rows(row)(0))
             Next
