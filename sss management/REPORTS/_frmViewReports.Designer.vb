@@ -48,6 +48,7 @@ Partial Class _frmViewReports
         Me.rbWeekly = New System.Windows.Forms.RadioButton()
         Me.rbDownTime = New System.Windows.Forms.RadioButton()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.rdExitSurvey = New System.Windows.Forms.RadioButton()
         Me.rdPinChange = New System.Windows.Forms.RadioButton()
         Me.rdUserFeedBack = New System.Windows.Forms.RadioButton()
         Me.rbPRN = New System.Windows.Forms.RadioButton()
@@ -116,7 +117,6 @@ Partial Class _frmViewReports
         Me.dtpTo = New System.Windows.Forms.DateTimePicker()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.rdExitSurvey = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -177,7 +177,6 @@ Partial Class _frmViewReports
         Me.GroupPanel2.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP
         Me.GroupPanel2.Controls.Add(Me.rptView)
-        'Me.GroupPanel2.DisabledBackColor = System.Drawing.Color.Empty
         Me.GroupPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupPanel2.Location = New System.Drawing.Point(0, 0)
         Me.GroupPanel2.Name = "GroupPanel2"
@@ -197,6 +196,7 @@ Partial Class _frmViewReports
         Me.GroupPanel2.Style.BorderRightWidth = 1
         Me.GroupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.GroupPanel2.Style.BorderTopWidth = 1
+        Me.GroupPanel2.Style.Class = ""
         Me.GroupPanel2.Style.CornerDiameter = 4
         Me.GroupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded
         Me.GroupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center
@@ -205,10 +205,12 @@ Partial Class _frmViewReports
         '
         '
         '
+        Me.GroupPanel2.StyleMouseDown.Class = ""
         Me.GroupPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
+        Me.GroupPanel2.StyleMouseOver.Class = ""
         Me.GroupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.GroupPanel2.TabIndex = 6
         '
@@ -239,7 +241,6 @@ Partial Class _frmViewReports
         Me.GroupPanel1.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP
         Me.GroupPanel1.Controls.Add(Me.Panel2)
-        'Me.GroupPanel1.DisabledBackColor = System.Drawing.Color.Empty
         Me.GroupPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupPanel1.Location = New System.Drawing.Point(0, 0)
         Me.GroupPanel1.Name = "GroupPanel1"
@@ -259,6 +260,7 @@ Partial Class _frmViewReports
         Me.GroupPanel1.Style.BorderRightWidth = 1
         Me.GroupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.GroupPanel1.Style.BorderTopWidth = 1
+        Me.GroupPanel1.Style.Class = ""
         Me.GroupPanel1.Style.CornerDiameter = 4
         Me.GroupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded
         Me.GroupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center
@@ -267,10 +269,12 @@ Partial Class _frmViewReports
         '
         '
         '
+        Me.GroupPanel1.StyleMouseDown.Class = ""
         Me.GroupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
+        Me.GroupPanel1.StyleMouseOver.Class = ""
         Me.GroupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.GroupPanel1.TabIndex = 4
         '
@@ -531,6 +535,18 @@ Partial Class _frmViewReports
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Hits Summary"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'rdExitSurvey
+        '
+        Me.rdExitSurvey.AutoSize = True
+        Me.rdExitSurvey.Font = New System.Drawing.Font("Segoe UI Symbol", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdExitSurvey.Location = New System.Drawing.Point(494, 50)
+        Me.rdExitSurvey.Name = "rdExitSurvey"
+        Me.rdExitSurvey.Size = New System.Drawing.Size(96, 23)
+        Me.rdExitSurvey.TabIndex = 25
+        Me.rdExitSurvey.Text = "Exit Survey"
+        Me.rdExitSurvey.UseVisualStyleBackColor = True
+        Me.rdExitSurvey.Visible = False
         '
         'rdPinChange
         '
@@ -842,7 +858,7 @@ Partial Class _frmViewReports
         Me.cbSTrans.Enabled = False
         Me.cbSTrans.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbSTrans.FormattingEnabled = True
-        Me.cbSTrans.Items.AddRange(New Object() {"Salary Loan", "Maternity Notification", "Retirement Pensioner", "Technical Retirement Lump Sum", "Status updates of retiree pensioner dependents", "ACOP", "Updating Contact Information", "Simplified Web Registration", "Pin Change", "Transactions using GSIS Card"})
+        Me.cbSTrans.Items.AddRange(New Object() {"Salary Loan", "Maternity Notification", "Retirement Pensioner", "Technical Retirement Lump Sum", "Status updates of retiree pensioner dependents", "ACOP", "Simplified Web Registration", "Pin Change", "Transactions using GSIS Card"})
         Me.cbSTrans.Location = New System.Drawing.Point(6, 25)
         Me.cbSTrans.Name = "cbSTrans"
         Me.cbSTrans.Size = New System.Drawing.Size(260, 28)
@@ -1276,17 +1292,6 @@ Partial Class _frmViewReports
         Me.dtpTo.Size = New System.Drawing.Size(115, 24)
         Me.dtpTo.TabIndex = 1
         '
-        'rdExitSurvey
-        '
-        Me.rdExitSurvey.AutoSize = True
-        Me.rdExitSurvey.Font = New System.Drawing.Font("Segoe UI Symbol", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdExitSurvey.Location = New System.Drawing.Point(494, 50)
-        Me.rdExitSurvey.Name = "rdExitSurvey"
-        Me.rdExitSurvey.Size = New System.Drawing.Size(96, 23)
-        Me.rdExitSurvey.TabIndex = 25
-        Me.rdExitSurvey.Text = "Exit Survey"
-        Me.rdExitSurvey.UseVisualStyleBackColor = True
-        '
         '_frmViewReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
@@ -1296,7 +1301,6 @@ Partial Class _frmViewReports
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "_frmViewReports"
         Me.Text = "z"

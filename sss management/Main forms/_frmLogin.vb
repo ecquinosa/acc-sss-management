@@ -147,12 +147,12 @@ Public Class _frmLogin
 
     Private Sub ButtonX3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonX3.Click
         Try
-            Dim Year As String = db.putSingleValue("Select Year from tblYear where Year = '" & Date.Today.Year & "'")
+            'Dim Year As String = db.putSingleValue("Select Year from tblYear where Year = '" & Date.Today.Year & "'")
 
-            If (String.IsNullOrEmpty(Year)) Then
-                db.sql = "Insert into tblYear values('" & Date.Today.Year & "' )"
-                db.ExecuteSQLQuery(db.sql)
-            End If
+            'If (String.IsNullOrEmpty(Year)) Then
+            '    db.sql = "Insert into tblYear values('" & Date.Today.Year & "' )"
+            '    db.ExecuteSQLQuery(db.sql)
+            'End If
 
             If My.Settings.firstRun = 0 Then
                 _frmServerCon.Dispose()

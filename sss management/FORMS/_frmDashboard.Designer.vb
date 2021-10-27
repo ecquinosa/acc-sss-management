@@ -471,7 +471,6 @@ Partial Class _frmDashboard
         Me.lvDivsn.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.lvDivsn.Border.Class = "ListViewBorder"
         Me.lvDivsn.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        'Me.lvDivsn.DisabledBackColor = System.Drawing.Color.Empty
         Me.lvDivsn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lvDivsn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvDivsn.ForeColor = System.Drawing.SystemColors.ControlText
@@ -497,7 +496,6 @@ Partial Class _frmDashboard
         Me.lvGroup.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.lvGroup.Border.Class = "ListViewBorder"
         Me.lvGroup.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        'Me.lvGroup.DisabledBackColor = System.Drawing.Color.Empty
         Me.lvGroup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lvGroup.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvGroup.ForeColor = System.Drawing.SystemColors.ControlText
@@ -523,7 +521,6 @@ Partial Class _frmDashboard
         Me.lvDiv.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.lvDiv.Border.Class = "ListViewBorder"
         Me.lvDiv.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        'Me.lvDiv.DisabledBackColor = System.Drawing.Color.Empty
         Me.lvDiv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lvDiv.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvDiv.ForeColor = System.Drawing.SystemColors.ControlText
@@ -558,7 +555,6 @@ Partial Class _frmDashboard
         Me.lvList.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.lvList.Border.Class = "ListViewBorder"
         Me.lvList.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        'Me.lvList.DisabledBackColor = System.Drawing.Color.Empty
         Me.lvList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lvList.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvList.ForeColor = System.Drawing.SystemColors.ControlText

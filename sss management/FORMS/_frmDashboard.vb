@@ -196,17 +196,18 @@ Public Class _frmDashboard
     End Sub
     Private Sub _frmDashboard_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         CheckForIllegalCrossThreadCalls = False
-        'If MessageBox.Show("Loading of dashboard data may take time. Do you want to continue?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-        'Timer1.Start()
+        ''If MessageBox.Show("Loading of dashboard data may take time. Do you want to continue?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        ''Timer1.Start()
+
         StartThread()
-        'End If
+        ''End If
     End Sub
 
     Private Delegate Sub dlgtPopulateData()
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        Dim del As New dlgtPopulateData(AddressOf PopulateData)
-        del.Invoke()
+        'Dim del As New dlgtPopulateData(AddressOf PopulateData)
+        'del.Invoke()
     End Sub
 
     Private _thread As Thread
