@@ -154,10 +154,11 @@ Public Class DAL_Mssql
             cmd.Parameters.AddWithValue("@affected_table", affectedTable)
 
             ExecuteNonQuery(CommandType.Text)
-
+            'MessageBox.Show(cmd.CommandText)
             Return True
         Catch ex As Exception
             strErrorMessage = ex.Message
+            'MessageBox.Show(ex.Message)
             Return False
         Finally
             CloseConnection()
@@ -169,6 +170,7 @@ Public Class DAL_Mssql
             OpenConnection()
             cmd = New SqlCommand(strQuery, con)
 
+            cmd.CommandTimeout = 0
             ExecuteScalar(CommandType.Text)
 
             Return True
@@ -185,6 +187,7 @@ Public Class DAL_Mssql
             OpenConnection()
             cmd = New SqlCommand(strQuery, con)
 
+            cmd.CommandTimeout = 0
             FillDataAdapter(CommandType.Text)
 
             Return True

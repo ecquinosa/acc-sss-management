@@ -39,6 +39,7 @@ Public Class ConnectionString
             Else
                 conn.Open()
             End If
+            conn.ConnectionTimeout = 0
             Dim da As OdbcDataAdapter = New OdbcDataAdapter(sql, conn)
             Dim ds As New DataSet
             da.Fill(ds, tbl)
@@ -51,7 +52,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(sql)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
 
             dt = Nothing
         Finally
@@ -76,7 +77,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
 
             sqlDT = Nothing
         End Try
@@ -84,7 +85,7 @@ Public Class ConnectionString
         Return sqlDT
     End Function
 
-    Private Sub SQL_ExecuteQuery(ByVal errDesc As String)
+    Public Shared Sub SQL_ExecuteQuery(ByVal errDesc As String)
         Dim DAL As New DAL_Mssql
         DAL.Add_mgmt_errorlogs(My.Settings.mgmtIP, My.Settings.mgmtID, My.Settings.mgmtName, My.Settings.mgmtBranch, errDesc, "Class: Connection String", "Database connection error")
         DAL.Dispose()
@@ -124,7 +125,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             ''ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
 
     End Sub
@@ -149,7 +150,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         Finally
             conn.Close()
         End Try
@@ -177,7 +178,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             ''ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         Finally
             conn.Close()
         End Try
@@ -199,7 +200,7 @@ Public Class ConnectionString
                 ans = True
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            'MsgBox(ex.ToString)
             'MsgBox("Unable to connect to server" & vbNewLine & "Please check your database connection", MsgBoxStyle.Exclamation)
             'MsgBox("Error on(checkExistence): " & ex.ToString)
             Dim errorLogs As String = ex.ToString.Trim
@@ -208,7 +209,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         Finally
             conn.Close()
         End Try
@@ -219,12 +220,20 @@ Public Class ConnectionString
         Dim result As String = ""
         Try
             If tbl <> "" Then
+                If sql.Contains("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID)") Then
+                    Console.Write("Debug")
+                End If
+
                 Dim dt As DataTable = getDataTable(sql, tbl)
-                If dt.Rows.Count <> 0 Then
-                    If Not IsDBNull(dt.Rows(0)(0)) Then
-                        result = dt.Rows(dt.Rows.Count - 1)(0)
+
+                If Not dt Is Nothing Then
+                    If dt.Rows.Count <> 0 Then
+                        If Not IsDBNull(dt.Rows(0)(0)) Then
+                            result = dt.Rows(dt.Rows.Count - 1)(0)
+                        End If
                     End If
                 End If
+
             Else
                 If conn.State = ConnectionState.Open Then
                     conn.Close()
@@ -250,12 +259,35 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         Finally
             conn.Close()
         End Try
         Return result
     End Function
+
+    Public Function putSingleValuev2(ByVal sql As String, Optional ByVal tbl As String = "") As String
+
+        Try
+            Dim DAL As New DAL_Mssql
+            If DAL.ExecuteQuery_Scalar(sql) Then
+                If DAL.ObjectResult = Nothing Then
+                    Return ""
+                Else
+                    Return DAL.ObjectResult.ToString
+                End If
+            End If
+            DAL.Dispose()
+            DAL = Nothing
+        Catch ex As Exception
+            Dim errorLogs As String = ex.ToString.Trim
+            SQL_ExecuteQuery(errorLogs)
+            Return ""
+        Finally
+            conn.Close()
+        End Try
+    End Function
+
     Dim conStr As String
     Function webisconnected(ByVal constring As String) As Boolean
         conStr = constring
@@ -278,7 +310,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
 
     End Function
@@ -336,7 +368,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Sub
 
@@ -354,7 +386,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Sub
 
@@ -372,7 +404,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Sub
 
@@ -446,7 +478,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         Finally
             conn.Close()
         End Try
@@ -470,7 +502,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         Finally
             conn.Close()
         End Try
@@ -481,14 +513,14 @@ Public Class ConnectionString
 
         Try
 
-            Dim cnn As String = connString1
+            Dim cnn As String = connstring1
             Dim da = New OdbcDataAdapter(selectCommand, cnn)
             Dim cb As New OdbcCommandBuilder(da)
             Dim tbl As New DataTable()
             tbl.Locale = System.Globalization.CultureInfo.InvariantCulture
             da.Fill(tbl)
             dgv.DataSource = tbl
-            dgv.AutoResizeColumns( _
+            dgv.AutoResizeColumns(
                 DataGridViewAutoSizeColumnsMode.ColumnHeader)
         Catch ex As OdbcException
             Dim errorLogs As String = ex.ToString.Trim
@@ -497,7 +529,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Sub
 
@@ -522,7 +554,7 @@ Public Class ConnectionString
             '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             'ExecuteSQLQuery(sql)
             SQL_ExecuteQuery(errorLogs)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
             Return ""
         End Try
     End Function
@@ -541,12 +573,13 @@ Public Class ConnectionString
             Next
             Return id
         Catch ex As Exception
-            Dim errorLogs As String = ex.ToString
-            errorLogs = errorLogs.Trim
-            sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
-                & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
-            ExecuteSQLQuery(sql)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            Dim errorLogs As String = ex.ToString.Trim
+            'errorLogs = errorLogs.Trim
+            'sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
+            '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
+            'ExecuteSQLQuery(sql)
+            SQL_ExecuteQuery(errorLogs)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Function
 
@@ -568,7 +601,7 @@ Public Class ConnectionString
             sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
                 & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             ExecuteSQLQuery(sql)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Function
 
@@ -585,12 +618,13 @@ Public Class ConnectionString
             Next
             Return id
         Catch ex As Exception
-            Dim errorLogs As String = ex.ToString
-            errorLogs = errorLogs.Trim
-            sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
-                & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
-            ExecuteSQLQuery(sql)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            Dim errorLogs As String = ex.ToString.Trim
+            'errorLogs = errorLogs.Trim
+            'sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
+            '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
+            'ExecuteSQLQuery(sql)
+            SQL_ExecuteQuery(errorLogs)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Function
 
@@ -613,12 +647,13 @@ Public Class ConnectionString
 
             Return id
         Catch ex As Exception
-            Dim errorLogs As String = ex.ToString
-            errorLogs = errorLogs.Trim
-            sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
-                & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
-            ExecuteSQLQuery(sql)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            Dim errorLogs As String = ex.ToString.Trim
+            'errorLogs = errorLogs.Trim
+            'sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
+            '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
+            'ExecuteSQLQuery(sql)
+            SQL_ExecuteQuery(errorLogs)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Function
 

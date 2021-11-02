@@ -167,7 +167,7 @@ Public Class _frmViewReports
     Public Sub Removealltxt()
         cbSalloan.Text = Nothing
         cbBranch.Text = Nothing
-        cbCard.Text = Nothing
+        'cbCard.Text = Nothing
         cbCluster.Text = Nothing
         cbSTrans.Text = Nothing
         cbFTrans.Text = Nothing
@@ -468,12 +468,13 @@ Public Class _frmViewReports
                 cb.Items.Add(dt.Rows(row)(0))
             Next
         Catch ex As Exception
-            Dim errorLogs As String = ex.ToString
-            errorLogs = errorLogs.Trim
-            sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
-                & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
-            ExecuteSQLQuery(sql)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            Dim errorLogs As String = ex.ToString.Trim()
+            'errorLogs = errorLogs.Trim
+            'sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
+            '    & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
+            'ExecuteSQLQuery(sql)
+            ConnectionString.SQL_ExecuteQuery(errorLogs)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
     End Sub
 
@@ -492,7 +493,7 @@ Public Class _frmViewReports
             sql = "insert into tbl_mgmt_errorlogs values('" & My.Settings.mgmtIP & "', '" & My.Settings.mgmtID & "', '" & My.Settings.mgmtName & "', '" & My.Settings.mgmtBranch & "', '" & errorLogs _
                 & "','" & "Class: Connection String" & "', '" & "Database connection error" & "', '" & Date.Today.ToShortDateString & "', '" & TimeOfDay & "') "
             ExecuteSQLQuery(sql)
-            MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
+            'MsgBox("Database connection error, Please contact system Administrator! ", MsgBoxStyle.Information)
         End Try
 
         Return sqlDT
@@ -3467,7 +3468,7 @@ Public Class _frmViewReports
         cbCard.Enabled = False
         cbBranch.Enabled = False
         cbCluster.Enabled = False
-
+        cbCard.Text = "UMID CARD"
     End Sub
     Private Sub rbWeekly_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbWeekly.CheckedChanged
         pickyear = 0
@@ -3486,7 +3487,7 @@ Public Class _frmViewReports
         dtpFrom.Format = DateTimePickerFormat.Short
 
         'dtpFrom.Value = Today
-        dtpFrom.Value = "07/01/2020"
+        dtpFrom.Value = "10/01/2021"
 
         dtpFrom.ShowUpDown = False
         dtpTo.MinDate = New DateTime(1753, 1, 1)
@@ -3502,7 +3503,7 @@ Public Class _frmViewReports
                 rbGroup.Visible = True
                 cbGroup.Visible = True
             Case "SSID Usage Report"
-                cbCard.Enabled = True
+                '    cbCard.Enabled = True
                 GroupBox2.Visible = True
             Case "Transaction Report"
                 GroupBox2.Visible = False
@@ -3534,6 +3535,7 @@ Public Class _frmViewReports
                 cbCard.Items.Add("UMID CARD")
                 cbCard.Items.Add("SSS CARD")
                 cbCard.Items.Add("Show All")
+                cbCard.Text = "UMID CARD"
                 cbBranch.Enabled = False
                 cbCluster.Enabled = False
                 cbBranch.Text = Nothing
@@ -3839,22 +3841,22 @@ Public Class _frmViewReports
 
     Private Sub rbUFAILED_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbUFAILED.CheckedChanged
         Trans = 1
-        cbCard.Text = "Show All"
-        If rbUFAILED.Checked = True Then
-            cbCard.Enabled = False
-        Else
-            cbCard.Enabled = True
-        End If
+        'cbCard.Text = "Show All"
+        'If rbUFAILED.Checked = True Then
+        '    cbCard.Enabled = False
+        'Else
+        '    cbCard.Enabled = True
+        'End If
     End Sub
 
     Private Sub rbErrorLogs_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbErrorLogs.CheckedChanged
         Trans = 1
-        cbCard.Text = "Show All"
-        If rbErrorLogs.Checked = True Then
-            cbCard.Enabled = False
-        Else
-            cbCard.Enabled = True
-        End If
+        'cbCard.Text = "Show All"
+        'If rbErrorLogs.Checked = True Then
+        '    cbCard.Enabled = False
+        'Else
+        '    cbCard.Enabled = True
+        'End If
     End Sub
 
     Private Sub rbMonitoringAll_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMonitoringAll.CheckedChanged

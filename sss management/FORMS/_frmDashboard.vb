@@ -12,20 +12,20 @@ Public Class _frmDashboard
         Try
             RefreshDb()
             Dim ipadd As String = lvList.SelectedItems(0).SubItems(1).Text
-            _frmMonitoring.lblKname.Text = db.putSingleValue("Select KIOSK_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.lblKIP.Text = db.putSingleValue("Select BRANCH_IP FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.lblKbranch.Text = db.putSingleValue("Select SSINFOTERMBR.BRANCH_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.lblStatus.Text = db.putSingleValue("Select DISTINCT STATUS FROM SSMONITORING where DATESTAMP = (select MAX(DATESTAMP) from SSMONITORING WHERE BRANCH_IP = '" & ipadd & "')")
-            _frmMonitoring.lblCluster.Text = db.putSingleValue("Select SSINFOTERMCLSTR.CLSTR_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD inner join SSINFOTERMCLSTR on SSINFOTERMKIOSK.CLSTR = SSINFOTERMCLSTR.CLSTR_CD where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.lblGroup.Text = db.putSingleValue("Select SSINFOTERMGROUP.GROUP_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD INNER JOIN SSINFOTERMGROUP on SSINFOTERMGROUP.GROUP_CD = SSINFOTERMKIOSK.DIVSN where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.LASTONLINE.Text = db.putSingleValue("Select max(ONLINE_DT) FROM SSMONITORING where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.LASTOFFLINE.Text = db.putSingleValue("Select max(OFFLINE_DT) FROM SSMONITORING where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.lbldate.Text = db.putSingleValue("Select ENCODE_DT from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.lblSerial.Text = db.putSingleValue("Select SERIALNUM FROM SSINFOTERMKIOSK WHERE BRANCH_IP = '" & ipadd & "'")
-            Dim getId As String = db.putSingleValue("Select KIOSK_ID from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.lblTrans.Text = db.putSingleValue("SELECT COUNT(REF_NUM) from SSINFOTERMACCESS where KIOSK_ID = '" & getId & "' and REF_NUM <>'' ")
-            _frmMonitoring.OpStart1.Text = db.putSingleValue("Select OP_START from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
-            _frmMonitoring.OpEnd1.Text = db.putSingleValue("Select OP_END from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lblKname.Text = db.putSingleValuev2("Select KIOSK_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lblKIP.Text = db.putSingleValuev2("Select BRANCH_IP FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lblKbranch.Text = db.putSingleValuev2("Select SSINFOTERMBR.BRANCH_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lblStatus.Text = db.putSingleValuev2("Select DISTINCT STATUS FROM SSMONITORING where DATESTAMP = (select MAX(DATESTAMP) from SSMONITORING WHERE BRANCH_IP = '" & ipadd & "')")
+            _frmMonitoring.lblCluster.Text = db.putSingleValuev2("Select SSINFOTERMCLSTR.CLSTR_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD inner join SSINFOTERMCLSTR on SSINFOTERMKIOSK.CLSTR = SSINFOTERMCLSTR.CLSTR_CD where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lblGroup.Text = db.putSingleValuev2("Select SSINFOTERMGROUP.GROUP_NM FROM SSINFOTERMKIOSK inner join SSINFOTERMBR on SSINFOTERMKIOSK.BRANCH_CD = SSINFOTERMBR.BRANCH_CD INNER JOIN SSINFOTERMGROUP on SSINFOTERMGROUP.GROUP_CD = SSINFOTERMKIOSK.DIVSN where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.LASTONLINE.Text = db.putSingleValuev2("Select max(ONLINE_DT) FROM SSMONITORING where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.LASTOFFLINE.Text = db.putSingleValuev2("Select max(OFFLINE_DT) FROM SSMONITORING where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lbldate.Text = db.putSingleValuev2("Select ENCODE_DT from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lblSerial.Text = db.putSingleValuev2("Select SERIALNUM FROM SSINFOTERMKIOSK WHERE BRANCH_IP = '" & ipadd & "'")
+            Dim getId As String = db.putSingleValuev2("Select KIOSK_ID from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.lblTrans.Text = db.putSingleValuev2("SELECT COUNT(REF_NUM) from SSINFOTERMACCESS where KIOSK_ID = '" & getId & "' and REF_NUM <>'' ")
+            _frmMonitoring.OpStart1.Text = db.putSingleValuev2("Select OP_START from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
+            _frmMonitoring.OpEnd1.Text = db.putSingleValuev2("Select OP_END from SSINFOTERMKIOSK where BRANCH_IP = '" & ipadd & "'")
 
             If IsDate(_frmMonitoring.LASTOFFLINE.Text) Then
                 Dim date1 As DateTime =
@@ -65,9 +65,9 @@ Public Class _frmDashboard
             lblOnline.Text = "0"
             lblOffline.Text = "0"
             lblSO.Text = "0"
-            lblOffline.Text = db.putSingleValue("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK INNER JOIN SSINFOTERMBR ON SSINFOTERMKIOSK.BRANCH_CD=SSINFOTERMBR.BRANCH_CD INNER JOIN SSMONITORING ON SSINFOTERMKIOSK.BRANCH_IP=SSMONITORING.BRANCH_IP WHERE SSMONITORING.STATUS = 1 AND " & dateStampFiltering(Today.ToString("yyyy-MM-dd")) & " and isvpn = 0", lblOffline.Text)
-            lblOnline.Text = db.putSingleValue("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK INNER JOIN SSINFOTERMBR ON SSINFOTERMKIOSK.BRANCH_CD=SSINFOTERMBR.BRANCH_CD WHERE (SSINFOTERMKIOSK.BRANCH_IP NOT IN(SELECT BRANCH_IP FROM SSMONITORING) OR BRANCH_IP NOT IN(SELECT DISTINCT BRANCH_IP FROM SSMONITORING WHERE STATUS=1 AND " & dateStampFiltering(Today.ToString("yyyy-MM-dd")) & " )) and isvpn = 0", lblOnline.Text)
-            lblSO.Text = db.putSingleValue("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK WHERE isvpn = 1")
+            lblOffline.Text = db.putSingleValuev2("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK INNER JOIN SSINFOTERMBR ON SSINFOTERMKIOSK.BRANCH_CD=SSINFOTERMBR.BRANCH_CD INNER JOIN SSMONITORING ON SSINFOTERMKIOSK.BRANCH_IP=SSMONITORING.BRANCH_IP WHERE SSMONITORING.STATUS = 1 AND " & dateStampFiltering(Today.ToString("yyyy-MM-dd")) & " and isvpn = 0", lblOffline.Text)
+            lblOnline.Text = db.putSingleValuev2("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK INNER JOIN SSINFOTERMBR ON SSINFOTERMKIOSK.BRANCH_CD=SSINFOTERMBR.BRANCH_CD WHERE (SSINFOTERMKIOSK.BRANCH_IP NOT IN(SELECT BRANCH_IP FROM SSMONITORING) OR BRANCH_IP NOT IN(SELECT DISTINCT BRANCH_IP FROM SSMONITORING WHERE STATUS=1 AND " & dateStampFiltering(Today.ToString("yyyy-MM-dd")) & " )) and isvpn = 0", lblOnline.Text)
+            lblSO.Text = db.putSingleValuev2("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK WHERE isvpn = 1")
             Dim i As Integer = lblOnline.Text
             Dim x As Integer = lblOffline.Text
             Dim z As Integer = lblSO.Text
@@ -110,8 +110,8 @@ Public Class _frmDashboard
 
     Public Sub putDataBranch()
         Try
-            lblOnline1.Text = db.putSingleValue("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK INNER JOIN SSINFOTERMBR ON SSINFOTERMKIOSK.BRANCH_CD=SSINFOTERMBR.BRANCH_CD WHERE (SSINFOTERMKIOSK.BRANCH_IP NOT IN(SELECT BRANCH_IP FROM SSMONITORING) OR BRANCH_IP NOT IN(SELECT DISTINCT BRANCH_IP FROM SSMONITORING WHERE STATUS=1 AND CAST(DATESTAMP AS DATE) = '" & Today & "')) AND SSINFOTERMBR.BRANCH_NM='" & lvDiv.SelectedItems(0).Text & "'", lblOffline.Text)
-            lblOffline1.Text = db.putSingleValue("SELECT COUNT(distinct SSMONITORING.BRANCH_IP) FROM SSINFOTERMKIOSK INNER JOIN SSMONITORING ON SSMONITORING.BRANCH_IP = SSINFOTERMKIOSK.BRANCH_IP INNER JOIN SSINFOTERMBR ON SSINFOTERMBR.BRANCH_CD = SSMONITORING.BRANCH_CD where SSMONITORING.STATUS = 1 and cast(DATESTAMP as date) = '" & Today & "' and SSINFOTERMBR.BRANCH_NM = '" & lvDiv.SelectedItems(0).Text & "'", lblOffline.Text)
+            lblOnline1.Text = db.putSingleValuev2("SELECT COUNT(DISTINCT SSINFOTERMKIOSK.KIOSK_ID) FROM SSINFOTERMKIOSK INNER JOIN SSINFOTERMBR ON SSINFOTERMKIOSK.BRANCH_CD=SSINFOTERMBR.BRANCH_CD WHERE (SSINFOTERMKIOSK.BRANCH_IP NOT IN(SELECT BRANCH_IP FROM SSMONITORING) OR BRANCH_IP NOT IN(SELECT DISTINCT BRANCH_IP FROM SSMONITORING WHERE STATUS=1 AND CAST(DATESTAMP AS DATE) = '" & Today & "')) AND SSINFOTERMBR.BRANCH_NM='" & lvDiv.SelectedItems(0).Text & "'", lblOffline.Text)
+            lblOffline1.Text = db.putSingleValuev2("SELECT COUNT(distinct SSMONITORING.BRANCH_IP) FROM SSINFOTERMKIOSK INNER JOIN SSMONITORING ON SSMONITORING.BRANCH_IP = SSINFOTERMKIOSK.BRANCH_IP INNER JOIN SSINFOTERMBR ON SSINFOTERMBR.BRANCH_CD = SSMONITORING.BRANCH_CD where SSMONITORING.STATUS = 1 and cast(DATESTAMP as date) = '" & Today & "' and SSINFOTERMBR.BRANCH_NM = '" & lvDiv.SelectedItems(0).Text & "'", lblOffline.Text)
             Dim i As Integer = lblOnline1.Text
             Dim y As Integer = lblOffline1.Text
             lblTot.Text = i + y

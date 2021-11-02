@@ -374,6 +374,7 @@ Partial Class _frmViewReports
         '
         Me.cbCard.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.cbCard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCard.Enabled = False
         Me.cbCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbCard.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCard.ForeColor = System.Drawing.SystemColors.InfoText
@@ -755,7 +756,7 @@ Partial Class _frmViewReports
         Me.TabPage3.Controls.Add(Me.rbSummarySSS)
         Me.TabPage3.Location = New System.Drawing.Point(4, 28)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(919, 75)
+        Me.TabPage3.Size = New System.Drawing.Size(913, 75)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "SSID Usage Report"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -926,7 +927,7 @@ Partial Class _frmViewReports
         Me.TabPage8.Location = New System.Drawing.Point(4, 28)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(919, 75)
+        Me.TabPage8.Size = New System.Drawing.Size(913, 75)
         Me.TabPage8.TabIndex = 7
         Me.TabPage8.Text = "SET Update Logs"
         Me.TabPage8.UseVisualStyleBackColor = True
