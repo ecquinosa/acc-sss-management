@@ -555,9 +555,9 @@ Partial Class _frmViewReports
         Me.rdPinChange.Font = New System.Drawing.Font("Segoe UI Symbol", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdPinChange.Location = New System.Drawing.Point(254, 52)
         Me.rdPinChange.Name = "rdPinChange"
-        Me.rdPinChange.Size = New System.Drawing.Size(100, 23)
+        Me.rdPinChange.Size = New System.Drawing.Size(103, 23)
         Me.rdPinChange.TabIndex = 8
-        Me.rdPinChange.Text = "Pin Change"
+        Me.rdPinChange.Text = "PIN Change"
         Me.rdPinChange.UseVisualStyleBackColor = True
         '
         'rdUserFeedBack
@@ -570,6 +570,7 @@ Partial Class _frmViewReports
         Me.rdUserFeedBack.TabIndex = 9
         Me.rdUserFeedBack.Text = "User FeedBack"
         Me.rdUserFeedBack.UseVisualStyleBackColor = True
+        Me.rdUserFeedBack.Visible = False
         '
         'rbPRN
         '
@@ -800,7 +801,7 @@ Partial Class _frmViewReports
         Me.TabPage5.Controls.Add(Me.rbMonitoring)
         Me.TabPage5.Location = New System.Drawing.Point(4, 28)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(919, 75)
+        Me.TabPage5.Size = New System.Drawing.Size(913, 75)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Monitoring Report"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -836,7 +837,7 @@ Partial Class _frmViewReports
         Me.TabPage6.Location = New System.Drawing.Point(4, 28)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(919, 75)
+        Me.TabPage6.Size = New System.Drawing.Size(913, 75)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Transaction Report"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -847,7 +848,7 @@ Partial Class _frmViewReports
         Me.cbFTrans.Enabled = False
         Me.cbFTrans.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbFTrans.FormattingEnabled = True
-        Me.cbFTrans.Items.AddRange(New Object() {"Salary Loan", "Maternity Notification", "Technical Retirement", "Annual Confirmation of Pensioner", "Simplified Web Registration"})
+        Me.cbFTrans.Items.AddRange(New Object() {"Salary Loan", "Maternity Notification", "Retirement Claim", "Annual Confirmation of Pensioner", "Simplified Web Registration"})
         Me.cbFTrans.Location = New System.Drawing.Point(272, 25)
         Me.cbFTrans.Name = "cbFTrans"
         Me.cbFTrans.Size = New System.Drawing.Size(271, 28)
@@ -859,7 +860,7 @@ Partial Class _frmViewReports
         Me.cbSTrans.Enabled = False
         Me.cbSTrans.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbSTrans.FormattingEnabled = True
-        Me.cbSTrans.Items.AddRange(New Object() {"Salary Loan", "Maternity Notification", "Retirement Pensioner", "Technical Retirement Lump Sum", "Status updates of retiree pensioner dependents", "ACOP", "Simplified Web Registration", "Pin Change", "Transactions using GSIS Card"})
+        Me.cbSTrans.Items.AddRange(New Object() {"Salary Loan", "Maternity Notification", "Retirement Claim", "Status updates of retiree pensioner dependents", "ACOP", "Simplified Web Registration", "Pin Change", "Transactions using GSIS Card", "PRN"})
         Me.cbSTrans.Location = New System.Drawing.Point(6, 25)
         Me.cbSTrans.Name = "cbSTrans"
         Me.cbSTrans.Size = New System.Drawing.Size(260, 28)
@@ -894,7 +895,7 @@ Partial Class _frmViewReports
         Me.TabPage7.Location = New System.Drawing.Point(4, 28)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(919, 75)
+        Me.TabPage7.Size = New System.Drawing.Size(913, 75)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Feedback Report"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -950,9 +951,9 @@ Partial Class _frmViewReports
         Me.TabPage4.Location = New System.Drawing.Point(4, 28)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(919, 75)
+        Me.TabPage4.Size = New System.Drawing.Size(913, 75)
         Me.TabPage4.TabIndex = 8
-        Me.TabPage4.Text = "Technical Retirement"
+        Me.TabPage4.Text = "Retirement Claim"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'GroupBox6
@@ -967,7 +968,7 @@ Partial Class _frmViewReports
         Me.GroupBox6.Size = New System.Drawing.Size(338, 36)
         Me.GroupBox6.TabIndex = 26
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Date Range for Technical retirment"
+        Me.GroupBox6.Text = "Date Range for Retirement Claim"
         '
         's
         '
@@ -1030,9 +1031,9 @@ Partial Class _frmViewReports
         Me.rbFTR.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbFTR.Location = New System.Drawing.Point(3, 3)
         Me.rbFTR.Name = "rbFTR"
-        Me.rbFTR.Size = New System.Drawing.Size(190, 27)
+        Me.rbFTR.Size = New System.Drawing.Size(164, 27)
         Me.rbFTR.TabIndex = 25
-        Me.rbFTR.Text = "Technical Retirement"
+        Me.rbFTR.Text = "Retirement Claim"
         Me.rbFTR.UseVisualStyleBackColor = True
         '
         'TabPage9
@@ -1048,7 +1049,7 @@ Partial Class _frmViewReports
         Me.TabPage9.Location = New System.Drawing.Point(4, 28)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(919, 75)
+        Me.TabPage9.Size = New System.Drawing.Size(913, 75)
         Me.TabPage9.TabIndex = 9
         Me.TabPage9.Text = "Graph"
         Me.TabPage9.UseVisualStyleBackColor = True

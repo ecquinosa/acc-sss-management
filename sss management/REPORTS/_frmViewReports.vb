@@ -1232,7 +1232,7 @@ Public Class _frmViewReports
                 cryRpt.SetParameterValue("@DateTo", date2.ToShortDateString)
                 cryRpt.SetParameterValue("@getName", getBranch)
 
-            ElseIf rbSummarySSS.Checked = True And rbAll.Checked = True And cbCard.Text = "Show All" Then
+            ElseIf rbSummarySSS.Checked = True And rbAll.Checked = True And cbCard.Text = "UMID CARD" Then 'cbCard.Text = "Show All" Then
                 GetName = "SSID TRANSACTION REPORT"
                 'TransValidation()
                 GetTrans()
@@ -1246,7 +1246,7 @@ Public Class _frmViewReports
                 cryRpt.SetParameterValue("@DateFrom", date1.ToShortDateString)
                 cryRpt.SetParameterValue("@DateTo", date2.ToShortDateString)
                 cryRpt.SetParameterValue("@getName", getBranch)
-            ElseIf rbSummarySSS.Checked = True And rbGroup.Checked = True And cbCard.Text = "Show All" Then
+            ElseIf rbSummarySSS.Checked = True And rbGroup.Checked = True And cbCard.Text = "UMID CARD" Then 'cbCard.Text = "Show All" Then
                 GetName = "SSID TRANSACTION REPORT"
                 'TransValidation()
                 GetTrans()
@@ -1260,7 +1260,7 @@ Public Class _frmViewReports
                 cryRpt.SetParameterValue("@DateFrom", date1.ToShortDateString)
                 cryRpt.SetParameterValue("@DateTo", date2.ToShortDateString)
                 cryRpt.SetParameterValue("@getName", getBranch)
-            ElseIf rbSummarySSS.Checked = True And rbCluster.Checked = True And cbCard.Text = "Show All" Then
+            ElseIf rbSummarySSS.Checked = True And rbCluster.Checked = True And cbCard.Text = "UMID CARD" Then 'cbCard.Text = "Show All" Then
                 GetName = "SSID TRANSACTION REPORT"
                 'TransValidation()
                 GetTrans()
@@ -1274,7 +1274,7 @@ Public Class _frmViewReports
                 cryRpt.SetParameterValue("@DateFrom", date1.ToShortDateString)
                 cryRpt.SetParameterValue("@DateTo", date2.ToShortDateString)
                 cryRpt.SetParameterValue("@getName", getBranch)
-            ElseIf rbSummarySSS.Checked = True And rbBranch.Checked = True And cbCard.Text = "Show All" Then
+            ElseIf rbSummarySSS.Checked = True And rbBranch.Checked = True And cbCard.Text = "UMID CARD" Then 'cbCard.Text = "Show All" Then
                 GetName = "SSID TRANSACTION REPORT"
                 'TransValidation()
                 GetTrans()
@@ -1391,9 +1391,35 @@ Public Class _frmViewReports
                 cryRpt.SetParameterValue("@DateTo", date2.ToShortDateString)
                 cryRpt.SetParameterValue("@getName", getBranch)
 
-            ElseIf cbSTrans.Text = "Retirement Pensioner" = True And rbAll.Checked = True Then
+            ElseIf cbSTrans.Text = "PRN" = True And rbAll.Checked = True Then
                 GetNameBranch()
-                GetName = "Retirement Pensioner"
+                GetName = "Payment Reference Number"
+
+                Dim rpt As New PRNAPPALL
+                cryRpt = rpt
+                '  cryRpt.Refresh()
+                cryRpt.SetDatabaseLogon(My.Settings.db_UName, My.Settings.db_Pass)
+                rptView.ReportSource = cryRpt
+                cryRpt.SetParameterValue("@DateFrom", date1.ToShortDateString)
+                cryRpt.SetParameterValue("@DateTo", date2.ToShortDateString)
+                cryRpt.SetParameterValue("@getName", getBranch)
+
+            ElseIf cbSTrans.Text = "PRN" = True And rbGroup.Checked = True Then
+                GetNameBranch()
+                GetName = "Payment Reference Number"
+
+                Dim rpt As New PRNAPPALL
+                cryRpt = rpt
+                '  cryRpt.Refresh()
+                cryRpt.SetDatabaseLogon(My.Settings.db_UName, My.Settings.db_Pass)
+                rptView.ReportSource = cryRpt
+                cryRpt.SetParameterValue("@DateFrom", date1.ToShortDateString)
+                cryRpt.SetParameterValue("@DateTo", date2.ToShortDateString)
+                cryRpt.SetParameterValue("@getName", getBranch)
+
+            ElseIf cbSTrans.Text = "Retirement Claim" = True Then ' And rbAll.Checked = True Then  '"Retirement Pensioner"
+                GetNameBranch()
+                GetName = "Retirement Claim" '"Retirement Pensioner"
 
                 'dt = db.ExecuteSQLQuery("SELECT SSNUM,DOBTH,DOCVRG,UMID_BANK,BANK_BR,TRANS_ACCTNO,STREET,BRGAY,POST_CD,EMAIL,PHONE,CELNO,USRTYP,SSTRANSINFOTERMTR.ENCODE_DT,SSTRANSINFOTERMTR.ENCODE_TME ,SSTRANSINFOTERMTR.BRANCH_IP,SSINFOTERMKIOSK.KIOSK_ID,SSINFOTERMBR.BRANCH_NM,SSINFOTERMCLSTR.CLSTR_NM,SSINFOTERMGROUP.GROUP_NM,SSTRANSINFOTERMTR.TAG,TRANID FROM SSTRANSINFOTERMTR INNER JOIN SSINFOTERMKIOSK on SSINFOTERMKIOSK.BRANCH_IP = SSTRANSINFOTERMTR.BRANCH_IP inner join SSINFOTERMBR on SSTRANSINFOTERMTR.BRANCH_CD = SSINFOTERMBR.BRANCH_CD inner join SSINFOTERMCLSTR on SSTRANSINFOTERMTR.CLSTR = SSINFOTERMCLSTR.CLSTR_CD INNER JOIN SSINFOTERMGROUP ON SSINFOTERMGROUP.GROUP_CD = SSTRANSINFOTERMTR.DIVSN where SSTRANSINFOTERMTR.ENCODE_DT BETWEEN '" & date1.ToShortDateString & "' and '" & date2.ToShortDateString & "'")
                 Dim rpt As New TECHRETREGALL
@@ -3557,6 +3583,7 @@ Public Class _frmViewReports
                 cbCard.Items.Add("UMID CARD")
                 cbCard.Items.Add("SSS CARD")
                 cbCard.Items.Add("Show All")
+                cbCard.Text = "UMID CARD"
                 cbCluster.Enabled = True
                 cbGroup.Enabled = False
                 cbBranch.Enabled = False
@@ -3574,6 +3601,7 @@ Public Class _frmViewReports
                 cbCard.Items.Add("UMID CARD")
                 cbCard.Items.Add("SSS CARD")
                 cbCard.Items.Add("Show All")
+                cbCard.Text = "UMID CARD"
                 cbBranch.Enabled = True
                 cbCluster.Enabled = False
                 cbGroup.Enabled = False
