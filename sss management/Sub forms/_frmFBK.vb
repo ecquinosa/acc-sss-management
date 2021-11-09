@@ -9,6 +9,16 @@ Public Class _frmFBK
     Dim string1 As String
     Public getFileName As String
     Dim PorE As Integer
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
     Public Sub operationFileTrans()
 
         Dim newview As New CrystalReportViewer

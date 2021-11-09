@@ -576,7 +576,7 @@ Partial Class _frmFBK
         Me.cbFB.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbFB.ForeColor = System.Drawing.SystemColors.InfoText
         Me.cbFB.FormattingEnabled = True
-        Me.cbFB.Items.AddRange(New Object() {"SSIT FEEDBACK", "WEBSITE FEEDBACK"})
+        Me.cbFB.Items.AddRange(New Object() {"SET FEEDBACK", "WEBSITE FEEDBACK"})
         Me.cbFB.Location = New System.Drawing.Point(395, 3)
         Me.cbFB.Name = "cbFB"
         Me.cbFB.Size = New System.Drawing.Size(238, 25)

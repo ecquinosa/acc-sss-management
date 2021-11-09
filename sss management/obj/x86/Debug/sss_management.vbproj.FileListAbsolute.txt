@@ -830,4 +830,3 @@ D:\WORK\Projects\acc-sss-management\sss management\obj\x86\Debug\sss management.
 D:\WORK\Projects\acc-sss-management\sss management\obj\x86\Debug\sss management.xml
 D:\WORK\Projects\acc-sss-management\sss management\obj\x86\Debug\sss management.pdb
 D:\WORK\Projects\acc-sss-management\sss management\bin\Debug\AxShockwaveFlashObjects.dll
-D:\WORK\Projects\acc-sss-management\sss management\obj\x86\Debug\sss_management.vbproj.AssemblyReference.cache

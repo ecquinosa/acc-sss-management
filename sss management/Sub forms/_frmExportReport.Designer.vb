@@ -33,6 +33,7 @@ Partial Class _frmExportReport
         Me.rbExcel = New System.Windows.Forms.RadioButton()
         Me.txtFile = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -58,7 +59,7 @@ Partial Class _frmExportReport
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(219, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(132, 45)
+        Me.Label3.Size = New System.Drawing.Size(162, 54)
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "EXPORT"
         '
@@ -68,13 +69,14 @@ Partial Class _frmExportReport
         Me.chkRename.ForeColor = System.Drawing.Color.White
         Me.chkRename.Location = New System.Drawing.Point(135, 106)
         Me.chkRename.Name = "chkRename"
-        Me.chkRename.Size = New System.Drawing.Size(135, 17)
+        Me.chkRename.Size = New System.Drawing.Size(159, 23)
         Me.chkRename.TabIndex = 40
         Me.chkRename.Text = "Use default file name"
         Me.chkRename.UseVisualStyleBackColor = True
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.btnsave)
         Me.Panel2.Controls.Add(Me.Label2)
@@ -112,7 +114,7 @@ Partial Class _frmExportReport
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(129, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 21)
+        Me.Label2.Size = New System.Drawing.Size(119, 28)
         Me.Label2.TabIndex = 39
         Me.Label2.Text = "File Format :"
         '
@@ -123,7 +125,7 @@ Partial Class _frmExportReport
         Me.rbPdf.ForeColor = System.Drawing.Color.White
         Me.rbPdf.Location = New System.Drawing.Point(230, 16)
         Me.rbPdf.Name = "rbPdf"
-        Me.rbPdf.Size = New System.Drawing.Size(56, 25)
+        Me.rbPdf.Size = New System.Drawing.Size(68, 32)
         Me.rbPdf.TabIndex = 38
         Me.rbPdf.TabStop = True
         Me.rbPdf.Text = "PDF"
@@ -136,7 +138,7 @@ Partial Class _frmExportReport
         Me.rbExcel.ForeColor = System.Drawing.Color.White
         Me.rbExcel.Location = New System.Drawing.Point(289, 16)
         Me.rbExcel.Name = "rbExcel"
-        Me.rbExcel.Size = New System.Drawing.Size(62, 25)
+        Me.rbExcel.Size = New System.Drawing.Size(76, 32)
         Me.rbExcel.TabIndex = 37
         Me.rbExcel.TabStop = True
         Me.rbExcel.Text = "Excel"
@@ -147,7 +149,7 @@ Partial Class _frmExportReport
         Me.txtFile.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFile.Location = New System.Drawing.Point(135, 71)
         Me.txtFile.Name = "txtFile"
-        Me.txtFile.Size = New System.Drawing.Size(363, 29)
+        Me.txtFile.Size = New System.Drawing.Size(363, 34)
         Me.txtFile.TabIndex = 34
         '
         'Label1
@@ -157,13 +159,23 @@ Partial Class _frmExportReport
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(42, 74)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 21)
+        Me.Label1.Size = New System.Drawing.Size(108, 28)
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "File Name :"
         '
+        'Button2
+        '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Location = New System.Drawing.Point(401, 78)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(138, 27)
+        Me.Button2.TabIndex = 42
+        Me.Button2.Text = "Save Pdf and Xls"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         '_frmExportReport
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(552, 259)
@@ -192,4 +204,5 @@ Partial Class _frmExportReport
     Friend WithEvents chkRename As System.Windows.Forms.CheckBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Button2 As Button
 End Class
