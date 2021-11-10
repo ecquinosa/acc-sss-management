@@ -160,7 +160,7 @@ Partial Class _frmDashboard
         Me.lblSO.AutoSize = True
         Me.lblSO.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSO.ForeColor = System.Drawing.Color.White
-        Me.lblSO.Location = New System.Drawing.Point(300, 58)
+        Me.lblSO.Location = New System.Drawing.Point(300, 61)
         Me.lblSO.Name = "lblSO"
         Me.lblSO.Size = New System.Drawing.Size(66, 25)
         Me.lblSO.TabIndex = 79
@@ -171,7 +171,7 @@ Partial Class _frmDashboard
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(289, 34)
+        Me.Label10.Location = New System.Drawing.Point(289, 36)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(99, 25)
         Me.Label10.TabIndex = 78
@@ -203,7 +203,7 @@ Partial Class _frmDashboard
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 34)
+        Me.Label1.Location = New System.Drawing.Point(3, 36)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(162, 25)
         Me.Label1.TabIndex = 71
@@ -214,7 +214,7 @@ Partial Class _frmDashboard
         Me.lblOffline.AutoSize = True
         Me.lblOffline.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOffline.ForeColor = System.Drawing.Color.White
-        Me.lblOffline.Location = New System.Drawing.Point(176, 58)
+        Me.lblOffline.Location = New System.Drawing.Point(176, 61)
         Me.lblOffline.Name = "lblOffline"
         Me.lblOffline.Size = New System.Drawing.Size(66, 25)
         Me.lblOffline.TabIndex = 74
@@ -225,7 +225,7 @@ Partial Class _frmDashboard
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(143, 34)
+        Me.Label2.Location = New System.Drawing.Point(143, 36)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(163, 25)
         Me.Label2.TabIndex = 72
@@ -236,7 +236,7 @@ Partial Class _frmDashboard
         Me.lblOnline.AutoSize = True
         Me.lblOnline.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOnline.ForeColor = System.Drawing.Color.White
-        Me.lblOnline.Location = New System.Drawing.Point(36, 58)
+        Me.lblOnline.Location = New System.Drawing.Point(36, 61)
         Me.lblOnline.Name = "lblOnline"
         Me.lblOnline.Size = New System.Drawing.Size(65, 25)
         Me.lblOnline.TabIndex = 73
@@ -340,7 +340,7 @@ Partial Class _frmDashboard
         Me.lblOnline1.AutoSize = True
         Me.lblOnline1.Font = New System.Drawing.Font("Segoe UI Symbol", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOnline1.ForeColor = System.Drawing.Color.White
-        Me.lblOnline1.Location = New System.Drawing.Point(103, 58)
+        Me.lblOnline1.Location = New System.Drawing.Point(103, 55)
         Me.lblOnline1.Name = "lblOnline1"
         Me.lblOnline1.Size = New System.Drawing.Size(0, 32)
         Me.lblOnline1.TabIndex = 4

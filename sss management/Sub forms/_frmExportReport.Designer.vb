@@ -26,6 +26,7 @@ Partial Class _frmExportReport
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chkRename = New System.Windows.Forms.CheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnsave = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,7 +34,6 @@ Partial Class _frmExportReport
         Me.rbExcel = New System.Windows.Forms.RadioButton()
         Me.txtFile = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -87,6 +87,17 @@ Partial Class _frmExportReport
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(550, 119)
         Me.Panel2.TabIndex = 39
+        '
+        'Button2
+        '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Location = New System.Drawing.Point(401, 78)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(138, 27)
+        Me.Button2.TabIndex = 42
+        Me.Button2.Text = "Save Pdf and Xls"
+        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Visible = False
         '
         'Button1
         '
@@ -162,16 +173,6 @@ Partial Class _frmExportReport
         Me.Label1.Size = New System.Drawing.Size(108, 28)
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "File Name :"
-        '
-        'Button2
-        '
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.Location = New System.Drawing.Point(401, 78)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(138, 27)
-        Me.Button2.TabIndex = 42
-        Me.Button2.Text = "Save Pdf and Xls"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         '_frmExportReport
         '

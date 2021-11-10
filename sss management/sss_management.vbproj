@@ -223,6 +223,12 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORTS\MonitoringKioskStatusv2.vb">
+      <DependentUpon>MonitoringKioskStatusv2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="REPORTS\PINCHANGE.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1644,6 +1650,10 @@
     <EmbeddedResource Include="REPORTS\MATNOTIFNEW.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MATNOTIFNEW.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTS\MonitoringKioskStatusv2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonitoringKioskStatusv2.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTS\PINCHANGE.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

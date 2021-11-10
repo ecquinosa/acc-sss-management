@@ -390,5 +390,23 @@ Public Class _frmDashboard
         End Try
     End Sub
 
+    Private Sub lbltotal_Click(sender As Object, e As EventArgs) Handles lbltotal.Click
 
+    End Sub
+
+    Private Sub lblSO_Click(sender As Object, e As EventArgs) Handles lblSO.Click
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
 End Class

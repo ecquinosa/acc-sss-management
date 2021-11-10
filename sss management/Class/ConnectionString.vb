@@ -272,7 +272,7 @@ Public Class ConnectionString
             Dim DAL As New DAL_Mssql
             If DAL.ExecuteQuery_Scalar(sql) Then
                 If DAL.ObjectResult = Nothing Then
-                    Return ""
+                    Return "0"
                 Else
                     Return DAL.ObjectResult.ToString
                 End If

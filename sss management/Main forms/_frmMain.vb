@@ -155,7 +155,6 @@ Public Class _frmMain
 
     Public Sub buttonclicked()
         If cnt = 1 Then
-
             btnDash.FlatStyle = FlatStyle.Flat
             btnDash.BackColor = Color.Blue
             btnDash.ForeColor = Color.White
@@ -424,6 +423,7 @@ Public Class _frmMain
     End Sub
 
     Private Sub btnReports_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReports.Click
+        _frmViewReports.Close()
         cnt = 4
         buttonclicked()
         FormName = am.getModuleName(My.Settings.Module_Tag)

@@ -147,7 +147,7 @@ Partial Class _frmViewReports
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1020, 729)
+        Me.Panel1.Size = New System.Drawing.Size(1209, 729)
         Me.Panel1.TabIndex = 0
         '
         'Panel3
@@ -157,7 +157,7 @@ Partial Class _frmViewReports
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1020, 729)
+        Me.Panel3.Size = New System.Drawing.Size(1209, 729)
         Me.Panel3.TabIndex = 1
         '
         'Panel5
@@ -167,7 +167,7 @@ Partial Class _frmViewReports
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 187)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1020, 542)
+        Me.Panel5.Size = New System.Drawing.Size(1209, 542)
         Me.Panel5.TabIndex = 5
         '
         'GroupPanel2
@@ -180,7 +180,7 @@ Partial Class _frmViewReports
         Me.GroupPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupPanel2.Location = New System.Drawing.Point(0, 0)
         Me.GroupPanel2.Name = "GroupPanel2"
-        Me.GroupPanel2.Size = New System.Drawing.Size(1020, 542)
+        Me.GroupPanel2.Size = New System.Drawing.Size(1209, 542)
         '
         '
         '
@@ -232,7 +232,7 @@ Partial Class _frmViewReports
         Me.rptView.ShowRefreshButton = False
         Me.rptView.ShowTextSearchButton = False
         Me.rptView.ShowZoomButton = False
-        Me.rptView.Size = New System.Drawing.Size(1014, 536)
+        Me.rptView.Size = New System.Drawing.Size(1203, 536)
         Me.rptView.TabIndex = 8
         '
         'GroupPanel1
@@ -244,7 +244,7 @@ Partial Class _frmViewReports
         Me.GroupPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupPanel1.Location = New System.Drawing.Point(0, 0)
         Me.GroupPanel1.Name = "GroupPanel1"
-        Me.GroupPanel1.Size = New System.Drawing.Size(1020, 187)
+        Me.GroupPanel1.Size = New System.Drawing.Size(1209, 187)
         '
         '
         '
@@ -293,7 +293,7 @@ Partial Class _frmViewReports
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1014, 181)
+        Me.Panel2.Size = New System.Drawing.Size(1203, 181)
         Me.Panel2.TabIndex = 0
         '
         'ButtonX2
@@ -302,7 +302,7 @@ Partial Class _frmViewReports
         Me.ButtonX2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ButtonX2.Location = New System.Drawing.Point(928, 41)
+        Me.ButtonX2.Location = New System.Drawing.Point(1117, 41)
         Me.ButtonX2.Name = "ButtonX2"
         Me.ButtonX2.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(6)
         Me.ButtonX2.Size = New System.Drawing.Size(83, 32)
@@ -314,7 +314,7 @@ Partial Class _frmViewReports
         '
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.cbSalloan)
-        Me.GroupBox3.Location = New System.Drawing.Point(741, 112)
+        Me.GroupBox3.Location = New System.Drawing.Point(807, 112)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(190, 66)
         Me.GroupBox3.TabIndex = 26
@@ -351,7 +351,7 @@ Partial Class _frmViewReports
         Me.Filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Filter.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.Filter.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Filter.Location = New System.Drawing.Point(926, 3)
+        Me.Filter.Location = New System.Drawing.Point(1115, 3)
         Me.Filter.Name = "Filter"
         Me.Filter.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(6)
         Me.Filter.Size = New System.Drawing.Size(83, 32)
@@ -363,7 +363,7 @@ Partial Class _frmViewReports
         '
         Me.GroupBox2.Controls.Add(Me.cbCard)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Location = New System.Drawing.Point(937, 112)
+        Me.GroupBox2.Location = New System.Drawing.Point(1003, 112)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(186, 66)
         Me.GroupBox2.TabIndex = 23
@@ -400,7 +400,7 @@ Partial Class _frmViewReports
         Me.ButtonX1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ButtonX1.Location = New System.Drawing.Point(928, 79)
+        Me.ButtonX1.Location = New System.Drawing.Point(1117, 79)
         Me.ButtonX1.Name = "ButtonX1"
         Me.ButtonX1.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(6)
         Me.ButtonX1.Size = New System.Drawing.Size(83, 32)
@@ -424,7 +424,7 @@ Partial Class _frmViewReports
         Me.TabControl1.Location = New System.Drawing.Point(3, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(921, 107)
+        Me.TabControl1.Size = New System.Drawing.Size(1110, 107)
         Me.TabControl1.TabIndex = 20
         '
         'TabPage1
@@ -434,7 +434,7 @@ Partial Class _frmViewReports
         Me.TabPage1.Location = New System.Drawing.Point(4, 28)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage1.Size = New System.Drawing.Size(1102, 75)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Down Time Report"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -532,7 +532,7 @@ Partial Class _frmViewReports
         Me.TabPage2.Location = New System.Drawing.Point(4, 28)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage2.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Hits Summary"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -757,7 +757,7 @@ Partial Class _frmViewReports
         Me.TabPage3.Controls.Add(Me.rbSummarySSS)
         Me.TabPage3.Location = New System.Drawing.Point(4, 28)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage3.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "SSID Usage Report"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -801,7 +801,7 @@ Partial Class _frmViewReports
         Me.TabPage5.Controls.Add(Me.rbMonitoring)
         Me.TabPage5.Location = New System.Drawing.Point(4, 28)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage5.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Monitoring Report"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -837,7 +837,7 @@ Partial Class _frmViewReports
         Me.TabPage6.Location = New System.Drawing.Point(4, 28)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage6.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Transaction Report"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -895,7 +895,7 @@ Partial Class _frmViewReports
         Me.TabPage7.Location = New System.Drawing.Point(4, 28)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage7.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Feedback Report"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -928,7 +928,7 @@ Partial Class _frmViewReports
         Me.TabPage8.Location = New System.Drawing.Point(4, 28)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage8.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage8.TabIndex = 7
         Me.TabPage8.Text = "SET Update Logs"
         Me.TabPage8.UseVisualStyleBackColor = True
@@ -951,7 +951,7 @@ Partial Class _frmViewReports
         Me.TabPage4.Location = New System.Drawing.Point(4, 28)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage4.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage4.TabIndex = 8
         Me.TabPage4.Text = "Retirement Claim"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1049,7 +1049,7 @@ Partial Class _frmViewReports
         Me.TabPage9.Location = New System.Drawing.Point(4, 28)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(913, 75)
+        Me.TabPage9.Size = New System.Drawing.Size(1108, 75)
         Me.TabPage9.TabIndex = 9
         Me.TabPage9.Text = "Graph"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -1143,7 +1143,7 @@ Partial Class _frmViewReports
         Me.GroupBox4.Controls.Add(Me.rbCluster)
         Me.GroupBox4.Controls.Add(Me.cbCluster)
         Me.GroupBox4.Controls.Add(Me.cbBranch)
-        Me.GroupBox4.Location = New System.Drawing.Point(282, 112)
+        Me.GroupBox4.Location = New System.Drawing.Point(348, 112)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(453, 66)
         Me.GroupBox4.TabIndex = 19
@@ -1239,7 +1239,7 @@ Partial Class _frmViewReports
         Me.GroupBox1.Controls.Add(Me.dtpTo)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 112)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 64)
+        Me.GroupBox1.Size = New System.Drawing.Size(339, 64)
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filter Report by Date Range"
@@ -1248,7 +1248,7 @@ Partial Class _frmViewReports
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(130, 36)
+        Me.Label5.Location = New System.Drawing.Point(162, 36)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(13, 18)
         Me.Label5.TabIndex = 4
@@ -1261,7 +1261,7 @@ Partial Class _frmViewReports
         Me.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFrom.Location = New System.Drawing.Point(9, 33)
         Me.dtpFrom.Name = "dtpFrom"
-        Me.dtpFrom.Size = New System.Drawing.Size(115, 24)
+        Me.dtpFrom.Size = New System.Drawing.Size(150, 24)
         Me.dtpFrom.TabIndex = 0
         '
         'Label1
@@ -1278,7 +1278,7 @@ Partial Class _frmViewReports
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(144, 13)
+        Me.Label2.Location = New System.Drawing.Point(175, 13)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 18)
         Me.Label2.TabIndex = 3
@@ -1289,17 +1289,18 @@ Partial Class _frmViewReports
         Me.dtpTo.CustomFormat = "yyyy"
         Me.dtpTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpTo.Location = New System.Drawing.Point(147, 32)
+        Me.dtpTo.Location = New System.Drawing.Point(178, 32)
         Me.dtpTo.Name = "dtpTo"
-        Me.dtpTo.Size = New System.Drawing.Size(115, 24)
+        Me.dtpTo.Size = New System.Drawing.Size(150, 24)
         Me.dtpTo.TabIndex = 1
+        Me.dtpTo.Value = New Date(2021, 11, 9, 21, 32, 40, 0)
         '
         '_frmViewReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1020, 729)
+        Me.ClientSize = New System.Drawing.Size(1209, 729)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
